@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const emptyMovie = {
   title: "",
   description: "",
+  trailerURL: "",
   posterURL: "",
   rating: "4.0",
 };
@@ -57,6 +58,17 @@ export default function AddMovieForm({ onAddMovie, onClose }) {
           required
           maxLength={400}
           rows={3}
+        />
+      </label>
+      <label>
+        Trailer embed URL
+        <input
+          name="trailerURL"
+          type="url"
+          value={movie.trailerURL}
+          onChange={updateField}
+          placeholder="https://www.youtube.com/embed/..."
+          required
         />
       </label>
       <label>

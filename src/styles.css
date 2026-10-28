@@ -381,10 +381,13 @@ h1 span {
 
 .movie-card {
   min-width: 0;
+  display: block;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 9px;
   background: var(--surface);
+  color: inherit;
+  text-decoration: none;
   transition: border-color 180ms ease, transform 180ms ease;
 }
 
@@ -462,6 +465,105 @@ h1 span {
   line-height: 1.6;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+}
+
+.movie-details {
+  padding: 38px 0 54px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  color: #b7c8e8;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.back-link span {
+  font-size: 18px;
+}
+
+.movie-details-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 42px;
+}
+
+.movie-details-copy .eyebrow {
+  color: var(--accent);
+}
+
+.movie-details-copy h1,
+.not-found-page h1 {
+  margin-bottom: 15px;
+  font-size: clamp(36px, 5vw, 58px);
+  overflow-wrap: anywhere;
+}
+
+.details-rating {
+  margin-bottom: 32px;
+  color: #c5c4ce;
+  font-size: 12px;
+}
+
+.details-rating span {
+  color: var(--accent);
+}
+
+.movie-details-copy h2,
+.trailer-section h2 {
+  margin-bottom: 12px;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+}
+
+.details-description {
+  color: #aaaab5;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.trailer-section h2 {
+  margin-top: 0;
+}
+
+.trailer-frame {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #080a10;
+  aspect-ratio: 16 / 9;
+}
+
+.trailer-frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.not-found-page {
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.not-found-page .eyebrow {
+  color: var(--accent);
+}
+
+.not-found-page .button {
+  text-decoration: none;
 }
 
 .empty-state {
@@ -675,6 +777,19 @@ h1 span {
 
   .movie-grid {
     gap: 10px;
+  }
+
+  .movie-details {
+    padding-top: 28px;
+  }
+
+  .movie-details-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .back-link {
+    margin-bottom: 25px;
   }
 
   .movie-poster {

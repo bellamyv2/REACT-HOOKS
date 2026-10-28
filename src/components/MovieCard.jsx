@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function MovieCard({ movie }) {
   return (
-    <article className="movie-card">
+    <Link className="movie-card" to={`/movies/${movie.id}`}>
       <div className="movie-poster">
         <img src={movie.posterURL} alt={`${movie.title} poster`} loading="lazy" />
         <span className="rating-badge" aria-label={`Rated ${movie.rating} out of 5`}>
@@ -13,6 +14,6 @@ export default function MovieCard({ movie }) {
         <h3>{movie.title}</h3>
         <p>{movie.description}</p>
       </div>
-    </article>
+    </Link>
   );
 }
